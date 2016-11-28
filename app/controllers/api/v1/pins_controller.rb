@@ -35,8 +35,9 @@ class Api::V1::PinsController < ApplicationController
     def render_unauthorized
       self.headers['WWW-Authenticate'] = 'Token realm="Pins"'
 
-      respond_to do |format|
-        format.json {render json: "Bad credentials", status: 401}
-      end
+      # respond_to do |format|
+      #   format.json {render json: "Bad credentials", status: 401}
+      # end
+      head 401
     end
 end
